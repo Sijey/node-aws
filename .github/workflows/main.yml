@@ -16,7 +16,7 @@ jobs:
           inventory: |
             [all]
             ${{secrets.AWS}} address=localhost
-          options:
+          options: |
             -e NODE_ENV=${{vars.NODE_ENV}}
             -e APP_PORT=${{vars.APP_PORT}}
             -e APP_PATH=${{vars.APP_PATH}}

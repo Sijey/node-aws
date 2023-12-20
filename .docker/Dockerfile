@@ -1,7 +1,7 @@
 FROM node:latest
 
 RUN mkdir -p /aws/app
-WORKDIR /aws/
+WORKDIR /aws
 
 COPY package.json /aws
 COPY app /aws/app

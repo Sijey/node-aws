@@ -1,6 +1,6 @@
 - name: Pull app changes
   git:
     repo: https://github.com/Sijey/node-aws.git
-    dest: "{{dir}}"
+    dest: "{{APP_PATH}}"
     single_branch: yes
     version: main
