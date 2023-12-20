@@ -1,0 +1,19 @@
+- name: Build docker image
+  docker_image:
+    build:
+      path: "{{APP_PATH}}"
+      dockerfile: .docker/Dockerfile
+    name: node_aws_image
+    source: build
+    force_source: true
+
+- name: Run docker container
+  docker_container:
+    name: node_aws
+    image: node_aws_image
+    restart: true
+    recreate: true
+    ports:
+      - "{{APP_PORT}}:{{APP_PORT}}"
+    env:
+      NODE_ENV: "{{NODE_ENV}}"
